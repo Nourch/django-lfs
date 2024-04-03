@@ -193,6 +193,8 @@ class Category(models.Model):
     product_cols = models.IntegerField(_("Product cols"), default=3)
     category_cols = models.IntegerField(_("Category cols"), default=3)
 
+#Comment
+    
     meta_title = models.CharField(_("Meta title"), max_length=100, default="<name>")
     meta_keywords = models.TextField(_("Meta keywords"), blank=True)
     meta_description = models.TextField(_("Meta description"), blank=True)
