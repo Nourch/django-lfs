@@ -2432,6 +2432,11 @@ class GroupsPropertiesRelation(models.Model):
         unique_together = ("group", "property")
         app_label = "catalog"
 
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
+
 
 class ProductsPropertiesRelation(models.Model):
     """
@@ -2461,6 +2466,11 @@ class ProductsPropertiesRelation(models.Model):
         ordering = ("position",)
         unique_together = ("product", "property")
         app_label = "catalog"
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
 
 
 class PropertyOption(models.Model):
@@ -2972,3 +2982,8 @@ class ProductAttachment(models.Model):
         if self.file.url:
             return self.file.url
         return None
+
+    def __str__(self):
+        model_name = self.__class__.__name__
+        fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+        return f"{model_name}({fields_str})"
