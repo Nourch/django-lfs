@@ -52,12 +52,12 @@ def products(amount=20):
 
     # Images
     path = os.path.join(os.path.dirname(__file__), "data")
-    fh = open(os.path.join(path, "image1.jpg"), "rb")
-    cf_1 = ContentFile(fh.read())
-    fh = open(os.path.join(path, "image2.jpg"), "rb")
-    cf_2 = ContentFile(fh.read())
-    fh = open(os.path.join(path, "image3.jpg"), "rb")
-    cf_3 = ContentFile(fh.read())
+    with open(os.path.join(path, "image1.jpg"), "rb") as fh:
+        cf_1 = ContentFile(fh.read())
+        fh = open(os.path.join(path, "image2.jpg"), "rb")
+        cf_2 = ContentFile(fh.read())
+        fh = open(os.path.join(path, "image3.jpg"), "rb")
+        cf_3 = ContentFile(fh.read())
 
     image_1 = Image(title="Image 1")
     image_1.image.save("Laminat01.jpg", cf_1)
