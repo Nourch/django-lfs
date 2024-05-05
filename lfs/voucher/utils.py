@@ -1,9 +1,9 @@
 # python imports
-import random
 
 # lfs imports
 from .models import VoucherOptions
 from .settings import MESSAGES
+import secrets
 
 
 def create_voucher_number():
@@ -23,7 +23,7 @@ def create_voucher_number():
 
     number = ""
     for i in range(0, length):
-        number += random.choice(letters)
+        number += secrets.choice(letters)
 
     return prefix + number + suffix
 
