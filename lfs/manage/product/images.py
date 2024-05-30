@@ -79,7 +79,7 @@ def add_image(request, product_id):
             try:
                 image.image.save(file_content.name, file_content, save=True)
             except Exception as e:
-                logger.info("Upload image: %s %s" % (file_content.name, e))
+                logger.info("Upload image: %s %s", file_content.name, e)
                 continue
 
     # Refresh positions

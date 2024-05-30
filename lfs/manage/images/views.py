@@ -112,7 +112,7 @@ def add_images(request):
                 image.image.save(file_content.name, file_content, save=True)
             except Exception as e:
                 image.delete()
-                logger.info("Upload of image failed: %s %s" % (file_content.name, e))
+                logger.info("Upload of image failed: %s %s", file_content.name, e)
                 continue
 
     result = json.dumps({"name": file_content.name, "type": "image/jpeg", "size": "123456789"})

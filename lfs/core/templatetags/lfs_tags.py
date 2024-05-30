@@ -527,7 +527,7 @@ def currency_text(value, request=None, grouping=True):
         result = locale.currency(value, grouping=grouping, international=shop.use_international_currency_code)
     except ValueError as e:
         result = value
-        logger.error("currency filter: %s" % e)
+        logger.error("currency filter: %s", e)
 
     if value < 0:
         # replace the minus symbol if needed
@@ -560,7 +560,7 @@ def currency(value, request=None, grouping=True):
         result = locale.currency(value, grouping=grouping, international=shop.use_international_currency_code)
     except ValueError as e:
         result = str(value)
-        logger.error("currency filter: %s" % e)
+        logger.error("currency filter: %s", e)
 
     result = decimal_l10n(result)
 

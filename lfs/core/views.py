@@ -68,7 +68,7 @@ def one_time_setup():
         try:
             locale.setlocale(locale.LC_ALL, lfs_locale)
         except locale.Error:
-            logger.error("Unsupported locale in settings.LFS_LOCALE: '%s'." % lfs_locale)
+            logger.error("Unsupported locale in settings.LFS_LOCALE: '%s'.", lfs_locale)
 
 
 class TextTemplateView(TemplateView):

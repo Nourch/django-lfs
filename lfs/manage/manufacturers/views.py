@@ -321,7 +321,7 @@ def update_data(request, manufacturer_id):
         try:
             manufacturer.image.delete()
         except OSError as e:
-            logger.error("Error while trying to delete manufacturer image: %s" % e)
+            logger.error("Error while trying to delete manufacturer image: %s", e)
 
     html = (
         ("#data", manufacturer_data_inline(request, manufacturer.pk)),
