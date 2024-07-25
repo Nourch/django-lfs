@@ -301,7 +301,7 @@ def category_state(request, manufacturer_id, category_id):
     html = ("#category-state-%s" % category_id, result)
     checkbox = ("#manufacturer-category-input-%s" % category_id, checked)
 
-    return HttpResponse(json.dumps({"html": html, "checkbox": checkbox}, content_type="application/json"))
+    return HttpResponse(json.dumps({"html": html, "checkbox": checkbox}, content_type="application/json"), content_type="application/json")
 
 
 @permission_required("core.manage_shop")
